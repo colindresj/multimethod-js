@@ -1,7 +1,7 @@
-class Multimethod {
-  constructor(dispatchingFn) {
-    this.dispatchingFn = dispatchingFn;
-  }
-}
+module.exports = function createMultimethod() {
+  function multimethod() {};
 
-export default Multimethod;
+  multimethod.registry = Object.create(null);
+
+  return multimethod;
+}

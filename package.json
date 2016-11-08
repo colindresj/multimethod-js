@@ -4,12 +4,10 @@
   "description": "Clojure inspired multimethods for JavaScript",
   "main": "src/index.js",
   "scripts": {
-    "pretest": "npm run build",
-    "test": "npm run test:browser && npm run test:node",
-    "test:node": "mocha test/*.test.js -R dot --require test/babel-hook",
-    "test:browser": "karma start",
-    "build": "babel ./src/index.js --out-file multimethod.js",
-    "build:min": "babel ./src/index.js | uglifyjs -o multimethod.min.js"
+    "test": "tape ./test/*.test.js | faucet"
+  },
+  "engines": {
+    "node": ">= 5"
   },
   "keywords": [
     "clojure",
@@ -20,18 +18,7 @@
   "author": "JC <jorge.e.colindres@gmail.com>",
   "license": "MIT",
   "devDependencies": {
-    "babel": "^4.7.8",
-    "babel-core": "^4.7.8",
-    "babel-loader": "^4.1.0",
-    "chai": "^2.1.1",
-    "karma": "^0.12.31",
-    "karma-chrome-launcher": "^0.1.7",
-    "karma-firefox-launcher": "^0.1.4",
-    "karma-mocha": "^0.1.10",
-    "karma-phantomjs-launcher": "^0.1.4",
-    "karma-webpack": "^1.5.0",
-    "mocha": "^2.2.1",
-    "uglify-js": "^2.4.17",
-    "webpack": "^1.7.3"
+    "faucet": "0.0.1",
+    "tape": "^4.5.1"
   }
 }
